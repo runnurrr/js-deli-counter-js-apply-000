@@ -4,10 +4,18 @@
 
 // 3. Build a function `currentLine` that accepts the current line of people and returns the current line as a string; for example, if 'katzDeliLine' is currently `["Ada", "Grace"]`, `currentLine(katzDeliLine)` would return `"The line is currently: 1. Ada, 2. Grace"`.  You don't have to use `katzDeliLine` as a variable or parameter name in your function though, it's just an example of a variable that might be passed to it. If there is nobody in line, it should return `"The line is currently empty."`
 
-function takeANumber (line, newPerson) {
-  line.push(newPerson);
-  return (`Welcome, ${newPerson}. You are number ${line.length} in line.`);
+// function takeANumber (line, newPerson) {
+//   line.push(newPerson);
+//   return (`Welcome, ${newPerson}. You are number ${line.length} in line.`);
+// }
+let currentTicket = 0;
+
+function takeANumber (line) {
+  currentTicket++;
+  line.push(currentTicket);
+  return ("Welcome, you have ticket number" + currentTicket);
 }
+
 
 function nowServing(line){
   if (line.length) {
